@@ -12,7 +12,7 @@ defmodule FcmDigitalChallenge do
     end
   end
 
-  @spec clean_file_content(list(String.t())) :: String.t() | {:error, String.t()}
+  @spec get_result(list(String.t())) :: String.t() | {:error, String.t()}
   defp get_result(content) do
     content
     |> get_destination()
@@ -59,7 +59,7 @@ defmodule FcmDigitalChallenge do
     end
   end
 
-  @spec format_segment_by_classification(list(String.t(), String.t(), String.t())) :: String.t()
+  @spec format_segment_by_classification(list(String.t()), String.t(), String.t()) :: String.t()
   defp format_segment_by_classification(file_content, segment_key, destination) do
     file_content
     |> Enum.filter(fn x ->
@@ -73,7 +73,7 @@ defmodule FcmDigitalChallenge do
     |> Enum.join("\n")
   end
 
-  @spec edit_segment_content(list(String.t(), String.t())) :: String.t()
+  @spec edit_segment_content(list(String.t()), String.t()) :: String.t()
   defp edit_segment_content(value, key) do
     case key do
       "Hotel" ->

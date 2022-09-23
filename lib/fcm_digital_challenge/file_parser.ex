@@ -19,7 +19,6 @@ defmodule FcmDigitalChallenge.FileParser do
     end
   end
 
-  @spec call(_) :: {:error, String.t()}
   def call(_), do: {:error, "Invalid file path"}
 
   @spec clean_file_content(String.t()) :: {:ok, list(String.t())} | {:error, String.t()}
