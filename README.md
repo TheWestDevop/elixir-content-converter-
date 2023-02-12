@@ -1,4 +1,4 @@
-# FcmDigitalChallenge
+# plain text converter
 
 **How to Run the Program**
 
